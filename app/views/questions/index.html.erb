@@ -1,0 +1,88 @@
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" id="nav-main">
+  <a class="navbar-brand" href="#" id="nav-logo">
+    <img alt="鲁克" src="..." id="img-logo">
+  </a>
+  <form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="lu一下...">
+    </div>
+    <button type="submit" class="btn btn-default">GO</button>
+
+  </form>
+  <ul class="nav navbar-nav" id="nav-fun">
+    <li ><a href="#">发现 </a></li>
+    <li ><a href="#">话题 </a></li>
+    <li ><a href="#">活动 </a></li>
+    <li ><a href="#">消息 <span class="badge">18</span></a></li>
+  </ul>
+  <ul class="nav navbar-nav pull-right" id="nav-login">
+    <li ><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp登陆 <span class="sr-only">(current)</span></a></li>
+    <li ><a href="#">注册 </a></li>
+  </ul>
+
+  <%= link_to '提问', new_question_path,id:'nav-quest', class:'btn btn-default navbar-btn' %>
+</nav> <!-- end nav -->
+<div class="container" id="container">
+
+  <div class="feed" id="feed">
+    <div class="feed-first">
+      <span class="glyphicon glyphicon-th-list"></span>&nbsp动态
+    </div>
+    <hr>
+    <%=	@questions.each do |question| %>
+        <div class="feed-question">
+          <div class="que-item">
+            <h2 class="feed-title"><%= question.title %></h2>
+            <h5 class="user-tips">狼王不乖，一个男人</h5>
+            <p>
+              <%= question.content %>
+            </p>
+          </div>
+
+          <div class="que-meta">
+            <span class="glyphicon glyphicon-plus">关注问题</span>
+            <span class="glyphicon glyphicon-flag">25条评论</span>
+          </div>
+          <hr>
+        </div> <!-- end question -->
+    <% end %>
+
+
+
+
+
+  </div>
+  <div class="function" id="function">
+    <p class="" style="color: #4cae4c;">每周趣闻</p>
+    <div class="func-img">
+      <%= link_to image_tag("4e13f51656ff1a96aca54bf98fefdd91_b.png", alt: "logo"),
+                  '#' %>
+    </div>
+    <div class="fruits">
+      <i class="glyphicon glyphicon-book">&nbsp我的收藏</i>
+      <i class="glyphicon glyphicon-eye-open">&nbsp我关注的人</i>
+      <i class="glyphicon glyphicon-bell">&nbsp我关注的话题</i>
+      <i class="glyphicon glyphicon-apple">&nbsp我的回答</i>
+    </div>
+    <hr>
+    <div class="treasure">
+      <i class="glyphicon glyphicon-send">&nbsp我爱去的地方</i>
+      <i class="glyphicon glyphicon-th">&nbsp话题广场</i>
+      <i class="glyphicon glyphicon-headphones">&nbsp校园活动</i>
+      <i class="glyphicon glyphicon-earphone">&nbsp约吧</i>
+    </div>
+    <hr>
+    <div class="fire">
+      <i class="glyphicon glyphicon-fire">&nbsp热门话题</i>
+      <i class="glyphicon glyphicon-cutlery">&nbsp风云人物</i>
+      <i class="glyphicon glyphicon-hd-video">&nbsp查成绩</i>
+      <i class="glyphicon glyphicon-blackboard">&nbsp看课表</i>
+    </div>
+  </div>
+  <div class="Clear"></div>
+  <a href="#" class="backToTop"></a>
+
+</div> <!-- end container -->
+</body>
