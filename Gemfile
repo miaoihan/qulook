@@ -25,6 +25,8 @@ gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+#用户登录注销
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'

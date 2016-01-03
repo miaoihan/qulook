@@ -1,5 +1,3 @@
-
-<body>
 <nav class="navbar navbar-default navbar-fixed-top" id="nav-main">
   <a class="navbar-brand" href="#" id="nav-logo">
     <img alt="鲁克" src="..." id="img-logo">
@@ -17,13 +15,27 @@
     <li ><a href="#">活动 </a></li>
     <li ><a href="#">消息 <span class="badge">18</span></a></li>
   </ul>
-  <ul class="nav navbar-nav pull-right" id="nav-login">
-    <li ><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp登陆 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">注册 </a></li>
-  </ul>
+  <% if user_signed_in? %>
+      <ul class="nav navbar-nav pull-right" id="nav-login">
+        <li><%= current_user.name %></li>
+        <li><%= link_to '退出', destroy_user_session_path, :method => :delete %></li>
+      </ul>
+  <% else %>
+      <ul class="nav navbar-nav pull-right" id="nav-login">
+        <li><a href="<%= new_user_session_path %>"><span class="glyphicon glyphicon-user"></span>&nbsp登陆</a></li>
+        <li><%= link_to '注册',new_user_registration_path %></li>
+      </ul>
+  <% end %>
+
+  <!--<ul class="nav navbar-nav pull-right" id="nav-login">-->
+    <!--<li ><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp登陆 <span class="sr-only">(current)</span></a></li>-->
+    <!--<li ><a href="#">注册 </a></li>-->
+  <!--</ul>-->
 
   <%= link_to '提问', new_question_path,id:'nav-quest', class:'btn btn-default navbar-btn' %>
 </nav> <!-- end nav -->
+
+
 <div class="container" id="container">
 
   <div class="feed" id="feed">
@@ -48,10 +60,6 @@
           <hr>
         </div> <!-- end question -->
     <% end %>
-
-
-
-
 
   </div>
   <div class="function" id="function">
@@ -85,4 +93,4 @@
   <a href="#" class="backToTop"></a>
 
 </div> <!-- end container -->
-</body>
+

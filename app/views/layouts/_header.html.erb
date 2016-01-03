@@ -1,0 +1,24 @@
+<nav class="navbar navbar-default navbar-fixed-top" id="nav-main">
+    <a class="navbar-brand" href="#" id="nav-logo">
+        <img alt="鲁克" src="..." id="img-logo">
+    </a>
+    <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="lu一下...">
+        </div>
+        <button type="submit" class="btn btn-default">GO</button>
+
+    </form>
+    <ul class="nav navbar-nav" id="nav-fun">
+        <li ><a href="#">发现 </a></li>
+        <li ><a href="#">话题 </a></li>
+        <li ><a href="#">活动 </a></li>
+        <li ><a href="#">消息 <span class="badge">18</span></a></li>
+    </ul>
+    <ul class="nav navbar-nav pull-right" id="nav-login">
+        <li ><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp登陆 <span class="sr-only">(current)</span></a></li>
+        <li ><a href="#">注册 </a></li>
+    </ul>
+
+    <%= link_to '提问', new_question_path,id:'nav-quest', class:'btn btn-default navbar-btn' %>
+</nav> <!-- end nav -->
